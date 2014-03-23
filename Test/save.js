@@ -5,13 +5,12 @@ var rightClick = chrome.contextMenus.create({
 });
 
 function myClick(info, tab) {
-    alert("do something");
+    alert("start");
+
     var client = new Dropbox.Client({key: "jenqtwz6nhaux4x"});
-    
-    client.authenticate();
 
     // Try to finish OAuth authorization.
-    client.authenticate({interactive: false}, function (error) {
+    client.authenticate({interactive: true}, function (error) {
         if (error) {
             alert('Authentication error: ' + error);
         }
@@ -21,5 +20,6 @@ function myClick(info, tab) {
         // Client is authenticated
         alert("hello");
     }
-    console.log(client.isAuthenticated());
+    
+    alert("end");
 }
