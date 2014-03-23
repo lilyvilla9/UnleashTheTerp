@@ -10,6 +10,7 @@
     "scripts": ["jquery.min.js", "dropbox-datastores-1.0-latest.js", "save.js"]
   }, 
   "permissions": [
+    "storage",
     "contextMenus"
   ]
 }

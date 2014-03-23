@@ -5,12 +5,13 @@ client.authenticate({interactive: false}, function (error) {
     if (error) {
         alert('Authentication error: ' + error);
     }
-});
-
-if (client.isAuthenticated()) {
+    if (client.isAuthenticated()) {
     // Client is authenticated
     document.write("<script>alert('hello world')</script>");
 }
+});
+
+
 
 /*
 var datastoreManager = client.getDatastoreManager();
