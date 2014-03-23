@@ -9,10 +9,10 @@ function myClick(info, tab) {
 
     var client = new Dropbox.Client({key: "jenqtwz6nhaux4x"});
 
-    // Try to finish OAuth authorization.
+    // Try to finish OAuth authorization
     client.authenticate({interactive: true}, function (error) {
         if (error) {
-            alert('Authentication error: ' + error);
+            alert("Authentication error: " + error);
         }
     });
 
@@ -20,6 +20,6 @@ function myClick(info, tab) {
         // Client is authenticated
         alert("hello");
     }
-    
+
     alert("end");
 }
