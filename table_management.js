@@ -63,7 +63,7 @@ $(document).ready(function(){
 		localStorage.setItem(urlName,fileType,folder);	
 
 		// adding row in table
-		$('#mytable').append('<tr><td class = "url_col" contenteditable="true" >' + urlName + '</td><td class = "type_col" contenteditable="true" >' + fileType + '</td><td class = "folder_col" contenteditable="true" >' + folder + '</td><td><button class = "dltbtn btn btn-primary btn-xs">X</button></td></tr>');
+		$('#mytable').append('<tr><td class = "url_col" contenteditable="true" >' + urlName + '</td><td class = "type_col" contenteditable="true" >' + fileType + '</td><td class = "folder_col" contenteditable="true" >' + folder + '</td><td><button class = "dltbtn btn btn-danger btn-xs">X</button></td></tr>');
 		localStorage.setItem('table', mytable.innerHTML);	
 		
 		var length = localStorage.length;
