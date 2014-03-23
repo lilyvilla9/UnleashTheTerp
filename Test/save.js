@@ -4,25 +4,32 @@ var rightClick = chrome.contextMenus.create({
   "onclick": authen
 });
 
-var client;
+var client = new Dropbox.Client({key: "jenqtwz6nhaux4x"});
+var authenticated = client.isAuthenticated();
 
 function authen(info, tab) {
     alert("start");
 
-    client = new Dropbox.Client({key: "jenqtwz6nhaux4x"});
-
+    if (authenticated == true) {
+        alert("I'm already authenticated");
+    }
+    
     client.authenticate();
 
-    // Try to finish OAuth authorization
+    /*// Try to finish OAuth authorization
     client.authenticate({interactive: true}, function (error) {
         if (error) {
             alert("Authentication error: " + error);
         }
-    });
-
+    });*/
+    
     if (client.isAuthenticated()) {
         // Client is authenticated
         alert("start2");
+
+        authenticated = true;
+
+        alert("It's my first time authenticating");
 
         /*saveFile(info);*/
 

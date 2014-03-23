@@ -7,8 +7,7 @@
     in that folder by filetype. The default folder is the Downloads folder.",
   "version": "1.0",  
 	"background": {
-    "scripts": ["chrome_ex_oauthsimple.js", "chrome_ex_oauth.js", "onload.js", 
-      "jquery.min.js", "dropbox-datastores-1.0-latest.js", "save.js"]
+    "scripts": ["jquery.min.js", "dropbox-datastores-1.0-latest.js", "save.js"]
   }, 
   "permissions": [
     "storage",
