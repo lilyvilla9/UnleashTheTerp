@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 	$(document).on('click', '#clearLocal', function(event){					
 		localStorage.clear();
-		mytable.innerHTML = '<tr><td>URLS</td><td>Filepath</td></tr>';		
+		mytable.innerHTML = '<tr><td>URLS</td><td>Filetype</td><td>Filepath</td></tr>';		
 		return false;
 	});
 	
@@ -33,34 +33,37 @@ $(document).ready(function(){
 	$(document).on('blur','.url_col',function(event){
 		var table_row = $(this).closest('tr');
 		var url_name = table_row.find(".url_col").text();
+		var file_type = table_row.find(".type_col").text();
 		var folder_path = table_row.find(".folder_col").text();
 		localStorage.removeItem(oldURL);
-		localStorage.setItem(url_name,folder_path);			
+		localStorage.setItem(url_name,file_type,folder_path);			
 		return false;
 	});
 	
 	$(document).on('blur','.folder_col',function(event){
 		var table_row = $(this).closest('tr');
 		var url_name = table_row.find(".url_col").text();
+		var file_type = table_row.find(".type_col").text();
 		var folder_path = table_row.find(".folder_col").text();		
-		localStorage.setItem(url_name,folder_path);			
+		localStorage.setItem(url_name,file_type,folder_path);			
 		return false;
 	});			
 				
 	$('#addrow').click(function(){
 		var urlName = document.getElementById("urlBox").value;
+		var fileType = document.getElementById("fileType").value;	
 		var folder = document.getElementById("folderBox").value;	
 		
-		if(urlName == null || urlName == "" || folder == null || folder == ""){
+		if(urlName == null || urlName == "" || fileType == null || fileType == ""|| folder == null || folder == ""){
 			alert("Must fill out website and folder name");
 			return false;
 		}
 		
 		// storing url and folder in local storage		
-		localStorage.setItem(urlName,folder);	
+		localStorage.setItem(urlName,fileType,folder);	
 
 		// adding row in table
-		$('#mytable').append('<tr><td class = "url_col" contenteditable="true" >' + urlName + '</td><td class = "folder_col" contenteditable="true" >' + folder + '</td><td><button class = "dltbtn">delete</button></td></tr>');
+		$('#mytable').append('<tr><td class = "url_col" contenteditable="true" >' + urlName + '</td><td class = "type_col" contenteditable="true" >' + fileType + '</td><td class = "folder_col" contenteditable="true" >' + folder + '</td><td><button class = "dltbtn btn btn-primary btn-xs">X</button></td></tr>');
 		localStorage.setItem('table', mytable.innerHTML);	
 		
 		var length = localStorage.length;

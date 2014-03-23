@@ -3,31 +3,32 @@
 <html>	
 	<head>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link href="css/style.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
+		<script  src="jquery-1.10.2.min.js"></script>
 
 		<script  src = "table_management.js"></script>	
 		<script src="save.js"></script>
 		
 	</head>	
 	<body>
-			<h1>OrganizeDrop</h1>
-	    <form>
-			<input type="text" name="url" placeholder="url(eg. google.com)" id="urlBox" size="40">
-			<input type="text" name="folder" placeholder="folder" id="folderBox" size="40">
-			<br/>
-			<input type="button" value="Select Folder" id = "selectFolder">
-			<input type="button" value="Add" id = "addrow">			
-		</form>
+		<h1>OrganizeDrop</h1>
+    <form>
+		<input type="text" name="url" placeholder="url (eg. google.com)" id="urlBox" size="50">
+		<input type="text" name="fileType" placeholder="filetype (eg. mp3, pdf, all)" id="fileType" size="50">
+		<input type="text" name="folder" placeholder="folder (eg. /school )" id="folderBox" size="50">
 		<br/>
-		<table id = "mytable" border = "1">			
-			<tr>
-				<td>URLS</td>
-				<td>Filetype</td>
-				<td>Filepath</td>				
-			</tr>			
-		</table>	
-		<button id = "clearLocal">Clear Storage</button>
+		<input type="button" class="btn btn-primary btn-sm" value="Select Folder" id="selectFolder">
+		<input type="button" class="btn btn-primary btn-sm" value="Add" id="addrow">			
+	</form>
+	<br/>
+	<table id="mytable" class="table table-bordered table-hover table-condensed">
+			<td>URLS</td>
+			<td>Filetype</td>
+			<td>Filepath</td>	
+		</tr>			
+	</table>	
+	<button id="clearLocal" class="btn btn-primary btn-sm">Clear Storage</button>
 		
 	</body>
 </html>
