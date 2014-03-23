@@ -8,9 +8,7 @@
   }, 
   "permissions": [
     "storage",
-    "contextMenus",
-  	"downloads",
-  	"nativeMessaging"
+    "contextMenus"
   ],
   "browser_action": {    
     "default_popup": "popup.html"
