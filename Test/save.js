@@ -11,6 +11,8 @@ function authen(info, tab) {
 
     client = new Dropbox.Client({key: "jenqtwz6nhaux4x"});
 
+    client.authenticate();
+
     // Try to finish OAuth authorization
     client.authenticate({interactive: true}, function (error) {
         if (error) {
@@ -22,7 +24,7 @@ function authen(info, tab) {
         // Client is authenticated
         alert("start2");
 
-        saveFile(info);
+        /*saveFile(info);*/
 
         alert("end2");
     }
