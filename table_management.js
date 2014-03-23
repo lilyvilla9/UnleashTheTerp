@@ -54,7 +54,7 @@ $(document).ready(function(){
 		var fileType = document.getElementById("fileType").value;	
 		var folder = document.getElementById("folderBox").value;	
 		
-		if(urlName == null || urlName == "" || fileType == null || fileType == ""|| folder == null || folder == ""){
+		if(urlName == null || urlName == "" || folder == null || folder == ""){
 			alert("Must fill out website and folder name");
 			return false;
 		}

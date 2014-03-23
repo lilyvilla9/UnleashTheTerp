@@ -12,12 +12,20 @@
 		
 	</head>	
 	<body>
-		<h1>OrganizeDrop</h1>
+		<h1>Organize<span style="color:#428bca">Drop</span></h1>
     <form>
-		<input type="text" name="url" placeholder="url (eg. google.com)" id="urlBox" size="50">
-		<input type="text" name="fileType" placeholder="filetype (eg. mp3, pdf, all)" id="fileType" size="50">
-		<input type="text" name="folder" placeholder="folder (eg. /school )" id="folderBox" size="50">
-		<br/>
+		<input type="text" class="form-control" name="url" placeholder="url (eg. google.com)" id="urlBox" size="50">
+		<div class="form-group" >
+			<select id="fileType" class="form-control">
+        <option value="all">All</option>
+        <option value="doc">Documents (.doc, .docx) </option>
+    		<option value="pdf">Pdfs</option>
+  		  <option value="audio">Audio (.mp3, .wav, .flac)</option>
+      	<option value="video">Videos (.mpeg, .mov, .wmv)</option>
+      </select>
+    </div>
+		<input type="text" class="form-control" name="folder" placeholder="folder (eg. /school )" id="folderBox" size="50">
+
 		<input type="button" class="btn btn-primary btn-sm" value="Select Folder" id="selectFolder">
 		<input type="button" class="btn btn-primary btn-sm" value="Add" id="addrow">			
 	</form>
